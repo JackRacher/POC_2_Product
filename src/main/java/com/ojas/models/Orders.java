@@ -3,7 +3,6 @@ package com.ojas.models;
 
 import java.time.LocalDateTime;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,7 +17,7 @@ public class Orders {
 
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
 	private int orderId;
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne
 	private Products products;
 	private int quantity;
 	@CreationTimestamp

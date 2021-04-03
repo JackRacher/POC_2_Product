@@ -1,8 +1,11 @@
 package com.ojas.models;
 
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Products {
@@ -12,6 +15,8 @@ public class Products {
 	private String productName;
 	private double productPrice;
 	
+	@OneToMany(mappedBy = "products")
+	private List<Orders> orders;
 	
 
 	public int getProductId() {
